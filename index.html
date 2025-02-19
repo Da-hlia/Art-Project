@@ -18,10 +18,12 @@
             width: 200px;
             background: black;
             padding: 15px;
+            z-index: 1000;
         }
         .navbar ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
         .navbar ul li {
             padding: 10px;
@@ -32,14 +34,16 @@
             color: white;
             text-decoration: none;
             font-size: 18px;
+            display: block;
         }
         .dropdown-content {
             display: none;
             position: absolute;
             background: black;
-            right: 0;
-            top: 100%;
+            right: 100%;
+            top: 0;
             width: 200px;
+            z-index: 1001;
         }
         .navbar ul li:hover .dropdown-content {
             display: block;
@@ -57,22 +61,22 @@
             <li><a href="index.html">Home</a></li>
             <li>
                 <a href="#">Biography ▼</a>
-                <div class="dropdown-content">
-                    <a href="about.html">About Me</a>
-                    <a href="travel.html">Inspiration from Travel</a>
-                    <a href="photos.html">Photos</a>
-                    <a href="videos.html">Videos</a>
-                </div>
+                <ul class="dropdown-content">
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="travel.html">Inspiration from Travel</a></li>
+                    <li><a href="photos.html">Photos</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
             </li>
             <li>
                 <a href="#">Exhibitions ▼</a>
-                <div class="dropdown-content">
-                    <a href="ny.html">New York</a>
-                    <a href="barcelona.html">Barcelona</a>
-                    <a href="rome.html">Rome</a>
-                    <a href="milan.html">Milan</a>
-                    <a href="others.html">Others</a>
-                </div>
+                <ul class="dropdown-content">
+                    <li><a href="ny.html">New York</a></li>
+                    <li><a href="barcelona.html">Barcelona</a></li>
+                    <li><a href="rome.html">Rome</a></li>
+                    <li><a href="milan.html">Milan</a></li>
+                    <li><a href="others.html">Others</a></li>
+                </ul>
             </li>
             <li><a href="acrylic.html">Acrylic Paintings</a></li>
             <li><a href="aquarelle.html">Aquarelle Paintings</a></li>
