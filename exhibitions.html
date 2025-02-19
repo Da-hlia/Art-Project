@@ -3,23 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exhibitions</title>
+    <title>Exhibitions</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .page-container {
+            margin-right: 220px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <nav>
+    <div class="navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="biography.html">Biography</a></li>
-            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li>
+                <a href="#">Biography ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="travel.html">Inspiration from Travel</a></li>
+                    <li><a href="photos.html">Photos</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Exhibitions ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="ny.html">New York</a></li>
+                    <li><a href="barcelona.html">Barcelona</a></li>
+                    <li><a href="rome.html">Rome</a></li>
+                    <li><a href="milan.html">Milan</a></li>
+                    <li><a href="others.html">Others</a></li>
+                </ul>
+            </li>
             <li><a href="acrylic.html">Acrylic Paintings</a></li>
             <li><a href="aquarelle.html">Aquarelle Paintings</a></li>
             <li><a href="asian.html">Asian Paintings</a></li>
             <li><a href="other.html">Other Creations</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="admin.html" id="adminLink" style="display: none;">Admin</a></li>
         </ul>
-    </nav>
-    <h1>exhibitions</h1>
-    <p>Content for this page will go here.</p>
+    </div>
+
+    <div class="page-container">
+        <h1>Exhibitions</h1>
+        <p>Content for this page will go here.</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const isAdmin = localStorage.getItem("isAdmin");
+            if (isAdmin === "true") {
+                document.getElementById("adminLink").style.display = "block";
+            }
+        });
+    </script>
 </body>
 </html>
