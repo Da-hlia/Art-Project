@@ -5,20 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 200px;
+            background: black;
+            padding: 15px;
+        }
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .navbar ul li {
+            padding: 10px;
+            text-align: right;
+            position: relative;
+        }
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: black;
+            right: 0;
+            top: 100%;
+            width: 200px;
+        }
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-align: right;
+        }
+    </style>
 </head>
 <body>
-    <nav>
+    <div class="navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="biography.html">Biography</a></li>
-            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li>
+                <a href="#">Biography ▼</a>
+                <div class="dropdown-content">
+                    <a href="about.html">About Me</a>
+                    <a href="travel.html">Inspiration from Travel</a>
+                    <a href="photos.html">Photos</a>
+                    <a href="videos.html">Videos</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Exhibitions ▼</a>
+                <div class="dropdown-content">
+                    <a href="ny.html">New York</a>
+                    <a href="barcelona.html">Barcelona</a>
+                    <a href="rome.html">Rome</a>
+                    <a href="milan.html">Milan</a>
+                    <a href="others.html">Others</a>
+                </div>
+            </li>
             <li><a href="acrylic.html">Acrylic Paintings</a></li>
             <li><a href="aquarelle.html">Aquarelle Paintings</a></li>
             <li><a href="asian.html">Asian Paintings</a></li>
             <li><a href="other.html">Other Creations</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="admin.html" id="adminLink" style="display: none;">Admin</a></li>
         </ul>
-    </nav>
+    </div>
+
     <h1>Welcome to My Art Portfolio</h1>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const isAdmin = localStorage.getItem("isAdmin");
+            if (isAdmin === "true") {
+                document.getElementById("adminLink").style.display = "block";
+            }
+        });
+    </script>
 </body>
 </html>
